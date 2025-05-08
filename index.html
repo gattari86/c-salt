@@ -1,0 +1,545 @@
+ew
+Code
+Thinking
+Copy<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>C-Salt Proposal: Website + Brand Identity Partnership</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --mint: #ccede7;
+            --yellow: #faca4d;
+            --gray: #686868;
+            --teal: #005f73;
+            --coral: #ff6f61;
+        }
+        
+        body {
+            font-family: 'Lato', sans-serif;
+            color: #333;
+            line-height: 1.6;
+            background-color: #fff;
+            max-width: 8.5in;
+            margin: 0 auto;
+            padding: 0.5in;
+        }
+        
+        h1, h2, h3, h4, h5 {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 600;
+            color: var(--gray);
+        }
+        
+        .section {
+            margin-bottom: 2rem;
+            padding: 1.5rem;
+            border-radius: 5px;
+            background-color: #fff;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 6px;
+            height: 100%;
+            background-color: var(--mint);
+        }
+        
+        .section-icon {
+            background-color: var(--mint);
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 15px;
+            color: var(--gray);
+        }
+        
+        .header {
+            background-color: var(--mint);
+            padding: 2rem;
+            border-radius: 8px;
+            margin-bottom: 2rem;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .header::after {
+            content: '';
+            position: absolute;
+            bottom: -50px;
+            right: -50px;
+            width: 200px;
+            height: 200px;
+            background-color: var(--yellow);
+            opacity: 0.3;
+            border-radius: 50%;
+            z-index: 1;
+        }
+        
+        .header h1 {
+            color: var(--gray);
+            font-size: 2.2rem;
+            font-weight: 700;
+            line-height: 1.2;
+            margin-bottom: 0.5rem;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .header p {
+            color: var(--gray);
+            font-size: 1.2rem;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .section-title {
+            display: flex;
+            align-items: center;
+            margin-bottom: 1.2rem;
+            border-bottom: 2px solid var(--mint);
+            padding-bottom: 0.5rem;
+        }
+        
+        .section-title h2 {
+            margin: 0;
+            font-size: 1.6rem;
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1.5rem 0;
+        }
+        
+        table th {
+            background-color: var(--mint);
+            color: var(--gray);
+            font-weight: 600;
+            text-align: left;
+            padding: 12px 15px;
+        }
+        
+        table td {
+            padding: 10px 15px;
+            border-bottom: 1px solid #eee;
+        }
+        
+        table tr:nth-child(even) {
+            background-color: rgba(204, 237, 231, 0.1);
+        }
+        
+        .package {
+            background-color: white;
+            border: 1px solid #eee;
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin-bottom: 1rem;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+        }
+        
+        .package-title {
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: var(--gray);
+            margin-bottom: 0.5rem;
+        }
+        
+        .package-price {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--teal);
+            margin-bottom: 1rem;
+        }
+        
+        .color-box {
+            width: 100%;
+            height: 80px;
+            border-radius: 6px;
+            margin-bottom: 0.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: 700;
+            text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+        }
+        
+        .color-mint {
+            background-color: var(--mint);
+            color: var(--gray);
+        }
+        
+        .color-yellow {
+            background-color: var(--yellow);
+            color: var(--gray);
+        }
+        
+        .color-gray {
+            background-color: var(--gray);
+            color: white;
+        }
+        
+        .color-teal {
+            background-color: var(--teal);
+        }
+        
+        .color-coral {
+            background-color: var(--coral);
+        }
+        
+        .footer {
+            margin-top: 3rem;
+            padding-top: 1.5rem;
+            border-top: 3px solid var(--mint);
+            text-align: center;
+        }
+        
+        .spiral-background {
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 150px;
+            height: 150px;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cpath fill='none' stroke='%23ccede7' stroke-width='2' d='M50 5 C55 5, 70 10, 75 25 C80 40, 75 60, 60 70 C45 80, 25 75, 15 60 C5 45, 10 25, 25 15 C35 8, 45 15, 50 25 C55 35, 50 50, 40 55 C30 60, 20 55, 15 45 C10 35, 15 25, 25 20 C35 15, 45 20, 50 30'/%3E%3C/svg%3E");
+            background-repeat: no-repeat;
+            opacity: 0.3;
+            z-index: 0;
+        }
+        
+        .salt-crystal {
+            position: absolute;
+            bottom: 10px;
+            right: 10px;
+            width: 100px;
+            height: 100px;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cpath fill='none' stroke='%23faca4d' stroke-width='1.5' d='M50 10 L65 30 L80 45 L65 65 L50 80 L35 65 L20 45 L35 30 Z'/%3E%3Cpath fill='none' stroke='%23faca4d' stroke-width='1.5' d='M50 20 L60 35 L70 45 L60 60 L50 70 L40 60 L30 45 L40 35 Z'/%3E%3Cpath fill='none' stroke='%23faca4d' stroke-width='1.5' d='M50 30 L55 40 L60 45 L55 55 L50 60 L45 55 L40 45 L45 40 Z'/%3E%3C/svg%3E");
+            background-repeat: no-repeat;
+            opacity: 0.2;
+            z-index: 0;
+        }
+
+        .next-steps li {
+            margin-bottom: 0.75rem;
+            position: relative;
+            padding-left: 1.5rem;
+        }
+        
+        .next-steps li::before {
+            content: '✓';
+            color: var(--teal);
+            position: absolute;
+            left: 0;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>C-Salt Proposal</h1>
+        <p>Website + Brand Identity Partnership</p>
+        <p class="mt-2">Prepared by Poppy Marketing & Consulting</p>
+        <div class="spiral-background"></div>
+    </div>
+
+    <div class="section">
+        <div class="section-title">
+            <div class="section-icon">
+                <i class="fas fa-search"></i>
+            </div>
+            <h2>Overview</h2>
+        </div>
+        <p>
+            C-Salt is preparing for a new chapter: a public-facing brand that reflects your professionalism, purpose, and deep-rooted mission. This proposal outlines our approach to building a website that brings your story to life, along with a brand system that communicates your values while giving you the tools to grow.
+        </p>
+        <div class="salt-crystal"></div>
+    </div>
+
+    <div class="section">
+        <div class="section-title">
+            <div class="section-icon">
+                <i class="fas fa-globe"></i>
+            </div>
+            <h2>Website Layout Overview</h2>
+        </div>
+        <p>Our recommended structure is built for clarity, accessibility, and storytelling:</p>
+
+        <div class="mt-4">
+            <h3 class="font-semibold text-lg mb-2">Homepage</h3>
+            <ul class="list-disc pl-6 mb-4">
+                <li>Hero section: "Your Next Move Starts Here" with CTA buttons</li>
+                <li>Quick intro to C-Salt's purpose and services</li>
+                <li>Founders' highlights</li>
+                <li>Portfolio snapshots or testimonials preview</li>
+            </ul>
+
+            <h3 class="font-semibold text-lg mb-2">About Us</h3>
+            <ul class="list-disc pl-6 mb-4">
+                <li>Mission, spiritual foundation (Matthew 5:13), and story of the name "C-Salt"</li>
+                <li>Founders' bios with headshots</li>
+            </ul>
+
+            <h3 class="font-semibold text-lg mb-2">Work With Us (Services)</h3>
+            <ul class="list-disc pl-6 mb-4">
+                <li>Two primary sections: Workforce Development & Executive Coaching</li>
+                <li>Detailed descriptions, outcomes, and CTAs</li>
+            </ul>
+
+            <h3 class="font-semibold text-lg mb-2">Portfolio or Blog</h3>
+            <ul class="list-disc pl-6 mb-4">
+                <li>Visual documentation of past work, impact stories, or educational blog entries</li>
+            </ul>
+
+            <h3 class="font-semibold text-lg mb-2">Contact</h3>
+            <ul class="list-disc pl-6 mb-4">
+                <li>Custom form, meeting scheduler integration, social links</li>
+            </ul>
+
+            <h3 class="font-semibold text-lg mb-2">Resources (Optional)</h3>
+            <ul class="list-disc pl-6 mb-4">
+                <li>Downloadable guides, PDFs, event highlights, embedded podcast links</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="section">
+        <div class="section-title">
+            <div class="section-icon">
+                <i class="fas fa-hand-holding-usd"></i>
+            </div>
+            <h2>Proposed Packages</h2>
+        </div>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Service</th>
+                    <th>Description</th>
+                    <th>Included In</th>
+                    <th>Value</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Brand Strategy Brief</td>
+                    <td>Mission, voice, and tone foundation — ensures your brand communicates clearly and consistently across all platforms</td>
+                    <td>Essentials & Premium</td>
+                    <td>$300</td>
+                </tr>
+                <tr>
+                    <td>Website Copywriting</td>
+                    <td>Up to 5 core pages — helps visitors understand your value quickly and encourages engagement</td>
+                    <td>Essentials & Premium</td>
+                    <td>$400</td>
+                </tr>
+                <tr>
+                    <td>Website Design & Build</td>
+                    <td>Fully responsive, custom design — brings your vision to life with a user-friendly, mobile-optimized experience</td>
+                    <td>Essentials & Premium</td>
+                    <td>$600</td>
+                </tr>
+                <tr>
+                    <td>Scheduler + Contact Form Setup</td>
+                    <td>Meeting link and custom intake — makes it easy for potential clients to take action and connect</td>
+                    <td>Essentials & Premium</td>
+                    <td>$200</td>
+                </tr>
+                <tr>
+                    <td>Portfolio or Blog Setup</td>
+                    <td>Visual portfolio or article layout — showcases your impact and thought leadership</td>
+                    <td>Premium</td>
+                    <td>$150</td>
+                </tr>
+                <tr>
+                    <td>Newsletter Integration</td>
+                    <td>Signup form + welcome automation — builds your email list and nurtures ongoing relationships</td>
+                    <td>Premium</td>
+                    <td>$150</td>
+                </tr>
+                <tr>
+                    <td>PDF Resource Library</td>
+                    <td>Up to 4 client-provided documents updated for clarity, design, and brand alignment — ensures your existing tools match your brand's professionalism</td>
+                    <td>Premium</td>
+                    <td>$100</td>
+                </tr>
+                <tr>
+                    <td>Brand Identity Mini-Kit</td>
+                    <td>Colors, fonts, and brand usage sheet — gives you a system to apply your brand consistently across future materials</td>
+                    <td>Premium</td>
+                    <td>$300</td>
+                </tr>
+                <tr>
+                    <td>Logo Design (Optional)</td>
+                    <td>2–3 concepts, revisions, final files in multiple formats (print, web, transparent), and a mini usage guideline document — gives you a versatile logo that's ready for any application</td>
+                    <td>Add-On</td>
+                    <td>$400</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div class="flex flex-wrap -mx-2">
+            <div class="w-full md:w-1/2 px-2 mb-4">
+                <div class="package" style="border-left: 4px solid var(--mint);">
+                    <h3 class="package-title">Essentials Package</h3>
+                    <div class="package-price">$1,500</div>
+                    <p>Complete website foundation with core branding elements</p>
+                </div>
+            </div>
+            <div class="w-full md:w-1/2 px-2 mb-4">
+                <div class="package" style="border-left: 4px solid var(--yellow);">
+                    <h3 class="package-title">Premium Package</h3>
+                    <div class="package-price">$2,000</div>
+                    <p><em>Includes a $200 discount off the full service value of $2,200</em></p>
+                </div>
+            </div>
+            <div class="w-full px-2">
+                <div class="package" style="border-left: 4px solid var(--gray);">
+                    <h3 class="package-title">Additional Logo Design Add-On</h3>
+                    <div class="package-price">$400</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="section">
+        <div class="section-title">
+            <div class="section-icon">
+                <i class="fas fa-palette"></i>
+            </div>
+            <h2>Color Review & Recommendations</h2>
+        </div>
+
+        <div class="mb-6">
+            <h3 class="text-lg font-semibold mb-3">Current Preferred Colors</h3>
+            <p>Inspired by Transcend's palette:</p>
+            <div class="flex flex-wrap -mx-2 mt-3">
+                <div class="w-full md:w-1/3 px-2 mb-4">
+                    <div class="color-box color-mint">Soft Mint<br>#ccede7</div>
+                </div>
+                <div class="w-full md:w-1/3 px-2 mb-4">
+                    <div class="color-box color-yellow">Golden Yellow<br>#faca4d</div>
+                </div>
+                <div class="w-full md:w-1/3 px-2 mb-4">
+                    <div class="color-box color-gray">Charcoal Gray<br>#686868</div>
+                </div>
+            </div>
+            <p>These provide a fresh and friendly foundation. We recommend keeping this as your <strong>core brand palette</strong> moving forward.</p>
+        </div>
+
+        <div class="mb-6">
+            <h3 class="text-lg font-semibold mb-3">Professional Recommendation – Confirmed Brand Palette:</h3>
+            <p>To elevate this palette and introduce more dynamic flexibility across applications:</p>
+            
+            <h4 class="font-medium mt-4 mb-2">Primary Colors:</h4>
+            <div class="flex flex-wrap -mx-2">
+                <div class="w-full md:w-1/3 px-2 mb-4">
+                    <div class="color-box color-mint">Soft Mint<br>#ccede7</div>
+                </div>
+                <div class="w-full md:w-1/3 px-2 mb-4">
+                    <div class="color-box color-yellow">Golden Yellow<br>#faca4d</div>
+                </div>
+                <div class="w-full md:w-1/3 px-2 mb-4">
+                    <div class="color-box color-gray">Charcoal Gray<br>#686868</div>
+                </div>
+            </div>
+            
+            <h4 class="font-medium mt-4 mb-2">Secondary Colors:</h4>
+            <div class="flex flex-wrap -mx-2">
+                <div class="w-full md:w-1/2 px-2 mb-4">
+                    <div class="color-box color-teal">Deep Teal<br>#005f73<br><span class="text-sm">Grounded and versatile</span></div>
+                </div>
+                <div class="w-full md:w-1/2 px-2 mb-4">
+                    <div class="color-box color-coral">Warm Coral<br>#ff6f61<br><span class="text-sm">Adds energy and warmth</span></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="mb-6">
+            <h3 class="text-lg font-semibold mb-3">Typography Recommendation:</h3>
+            <p>We recommend selecting a modern, clean sans-serif font for headings that conveys professionalism and approachability, paired with a highly legible body font that works well across both digital and print formats. This pairing should reflect clarity, warmth, and trust — key elements of the C-Salt brand identity.</p>
+        </div>
+
+        <div class="mb-6">
+            <h3 class="text-lg font-semibold mb-3">Alternative Palette (Optional for Contrast Use):</h3>
+            <p>If a more earthy, grounded feel is ever desired (e.g., for print materials or special campaigns), the following variation could be considered:</p>
+            <ul class="list-disc pl-6 mt-2">
+                <li>Deep Teal: #1A6B66</li>
+                <li>Warm Gold: #D9A53B</li>
+                <li>Stone Gray: #3A3A3A</li>
+                <li>Terracotta: #C36A4E</li>
+                <li>Soft White: #FFFFFF</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="section">
+        <div class="section-title">
+            <div class="section-icon">
+                <i class="fas fa-lightbulb"></i>
+            </div>
+            <h2>Strategic Enhancements</h2>
+        </div>
+
+        <div class="mb-5">
+            <h3 class="text-lg font-semibold mb-2">Brand Concept:</h3>
+            <p>"Cultivating Purpose" — Inspired by Matthew 5:13 and the power of salt to preserve, purify, and amplify.</p>
+        </div>
+
+        <div class="mb-5">
+            <h3 class="text-lg font-semibold mb-2">Positioning Statement:</h3>
+            <p>We will develop a concise, compelling statement that clearly articulates who C-Salt serves, the unique combination of services it offers (executive coaching and workforce development), and the deeper purpose that drives the work — rooted in values, transformation, and legacy. This statement will be used consistently across platforms to establish credibility and emotional connection.</p>
+        </div>
+
+        <div class="mb-5">
+            <h3 class="text-lg font-semibold mb-2">Visual Themes:</h3>
+            <ul class="list-disc pl-6">
+                <li>Spiral Motif: Transformation and legacy</li>
+                <li>Salt Crystal Geometry: Purity and clarity</li>
+                <li>Growth Metaphors: Seedlings, roots, upward lines</li>
+            </ul>
+        </div>
+
+        <div class="mb-5">
+            <h3 class="text-lg font-semibold mb-2">Tagline Direction:</h3>
+            <p>We will explore tagline options that reflect C-Salt's mission of purpose-led growth, ancestral inspiration, and professional development. The tone will be grounded yet inspirational, with language that resonates across both faith-based and professional audiences. Each option will aim to be memorable, meaningful, and versatile across formats.</p>
+        </div>
+    </div>
+
+    <div class="section">
+        <div class="section-title">
+            <div class="section-icon">
+                <i class="fas fa-check-circle"></i>
+            </div>
+            <h2>Next Steps</h2>
+        </div>
+
+        <ul class="next-steps">
+            <li>Select your package (Essentials or Premium)</li>
+            <li>Let us know if you'd like to add Logo Design</li>
+            <li>We'll schedule a creative kickoff to gather final content and align on timelines</li>
+        </ul>
+
+        <p class="mt-6">We're honored to support C-Salt's evolution and help share your story with the world.</p>
+    </div>
+
+    <div class="footer">
+        <p class="font-semibold">Prepared by:</p>
+        <p>Ricardo Gattas-Moras</p>
+        <p>Poppy Marketing & Consulting</p>
+        <p class="text-blue-600">www.poppymarketingandconsulting.com</p>
+    </div>
+</body>
+</html>
